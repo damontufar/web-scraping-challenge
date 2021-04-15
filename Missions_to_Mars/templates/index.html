@@ -26,10 +26,28 @@
     </div>
 
     <!-- Mars Image -->
-    <div class="row" id="mars_image">
+    <div class="row" id="mars_image_facts">
       <div class="col-md-8">
         <h2 class="heading">Featured Mars Image</h2>
         <img src="{{info.image_url}}" alt = "Mars Image">
+      </div>
+
+      <div class="col-md-4">
+        <h3> Mars Facts</h3>
+        {%for row in info.facts_table%}
+        {{row}}
+        {% endfor %}
+      </div>
+    </div>
+
+     <!-- Mars' Hemispheres Images -->
+     <div class="row" id="mars_hemispheres">
+      <div class="col-md-12">
+        <h2 class="heading">Mars Hemispheres</h2>
+        {%for image in info.hemisphere_images%}
+        {{image.title}}
+        <img src="{{image.img_url}}" alt = "Hemispheres Image">
+        {% endfor %}
       </div>
     </div>
 
