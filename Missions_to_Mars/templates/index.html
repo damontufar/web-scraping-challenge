@@ -45,8 +45,16 @@
       <div class="col-md-12">
         <h2 class="heading">Mars Hemispheres</h2>
         {%for image in info.hemisphere_images%}
-        {{image.title}}
-        <img src="{{image.img_url}}" alt = "Hemispheres Image">
+        <div class = "col-md-3">
+          <div class="card">
+            <div class="card_body">
+              <h4 class="card_title"> {{image.title}}</h4>
+              <img class= "card_image" src="{{image.img_url}}" width="250" height="250" 
+              alt = "Hemispheres Image">
+            </div>
+          </div>
+        </div>
+    
         {% endfor %}
       </div>
     </div>
