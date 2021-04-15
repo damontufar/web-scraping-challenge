@@ -19,8 +19,17 @@
     <!-- Latest News Mars -->
     <div class="row" id="latest-news">
       <div class="col-md-12">
-        <h4 class="heading">Latest Mars News</h4>
-        <small>{{ info.title }}</small>
+        <h2 class="heading">Latest Mars News</h2>
+        <h3>{{info.title}}</h3>
+        <h4>{{info.paragraph}}</h4>
+      </div>
+    </div>
+
+    <!-- Mars Image -->
+    <div class="row" id="mars_image">
+      <div class="col-md-8">
+        <h2 class="heading">Featured Mars Image</h2>
+        <img src="{{info.image_url}}" alt = "Mars Image">
       </div>
     </div>
 
