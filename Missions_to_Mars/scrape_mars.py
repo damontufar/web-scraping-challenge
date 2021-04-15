@@ -1,6 +1,7 @@
 
 #Dependencies
 
+from typing import Sequence
 import pandas as pd
 from bs4 import BeautifulSoup as bs
 from splinter import Browser
@@ -50,10 +51,7 @@ def scrape():
     mars_df.columns = ['Metric', 'Value']
 
     #Convert the data to a HTML table string.
-
-    mars_html = mars_df.to_html(index = False)
-    mars_html = mars_html.replace('\n','')
-    mars_html = mars_html.replace('<table border="1" class="dataframe">','<table class ="table">')
+    mars_html = mars_df.to_html()
 
     #MARS HEMISPHERES IMAGES 
 
@@ -94,13 +92,13 @@ def scrape():
         hemisphere_image_urls.append(data)
        
     #Store data in a dictionary
-        mars_dict = {
-            "title" : news_title,
-            "paragraph" : news_p,
-            "image_url" : featured_image_url,
-            "facts_table": mars_html,
-            "hemisphere_images": hemisphere_image_urls
-            }
+    mars_dict = {
+        "title" : news_title,
+        "paragraph" : news_p,
+        "image_url" : featured_image_url,
+        "facts_table": mars_html,
+        "hemisphere_images": hemisphere_image_urls
+        }
 
     #Quit the browser
     browser.quit()
